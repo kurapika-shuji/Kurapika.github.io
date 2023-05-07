@@ -1172,7 +1172,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #af4f85;
+  background: #4059bf;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2646,7 +2646,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 /* 侧边栏图标格式设置 */
-.bilibili {
+.mybilibili {
   background-image: url("/images/bilibili.svg");
   background-size: 1em 1em;
   opacity: 0.55;
@@ -2657,6 +2657,6 @@ ul.breadcrumb li + li:last-child {
   border-radius: 0rem;
 /*鼠标停留在图标上时，图标呈现发光效果*/
 }
-.bilibili:hover {
+.mybilibili:hover {
   opacity: 1;
 }
