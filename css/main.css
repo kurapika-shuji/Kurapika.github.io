@@ -1172,7 +1172,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #17ffff;
+  background: #8f5e25;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2645,7 +2645,7 @@ ul.breadcrumb li + li:last-child {
     margin: 8px 0 0;
   }
 }
-/* sidebar social icon */
+/* 侧边栏图标格式设置 */
 .bilibili {
   background-image: url("/images/bilibili.svg");
   background-size: 1em 1em;
