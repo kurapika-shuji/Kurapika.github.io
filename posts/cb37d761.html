@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"owome.space","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前言 本篇主要分享了一篇有关森林水文模型的综述文献。  以下内容仅为个人对文章的学习与理解，详情请阅读原文。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文献分享：Forest hydrology modeling tools for watershed management:A review">
+<meta property="og:url" content="http://owome.space/posts/cb37d761.html">
+<meta property="og:site_name" content="OWO">
+<meta property="og:description" content="前言 本篇主要分享了一篇有关森林水文模型的综述文献。  以下内容仅为个人对文章的学习与理解，详情请阅读原文。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://owome.space/posts/cb37d761/abstract.png">
+<meta property="og:image" content="http://owome.space/posts/cb37d761/figure1.jpg">
+<meta property="og:image" content="http://owome.space/posts/cb37d761/figure2.jpg">
+<meta property="og:image" content="http://owome.space/posts/cb37d761/figure3.png">
+<meta property="article:published_time" content="2023-05-15T08:04:03.000Z">
+<meta property="article:modified_time" content="2023-05-16T09:10:33.243Z">
+<meta property="article:author" content="庶几">
+<meta property="article:tag" content="文献">
+<meta property="article:tag" content="英文">
+<meta property="article:tag" content="森林水文模型">
+<meta property="article:tag" content="综述">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://owome.space/posts/cb37d761/abstract.png">
+
+<link rel="canonical" href="http://owome.space/posts/cb37d761.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>文献分享：Forest hydrology modeling tools for watershed management:A review | OWO</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">OWO</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">6</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">3</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://owome.space/posts/cb37d761.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="庶几">
+      <meta itemprop="description" content="不定期的分享一些有意思的东西，要多来逛逛哦(´▽`ʃ♡ƪ)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OWO">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          文献分享：Forest hydrology modeling tools for watershed management:A review
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-05-15 16:04:03" itemprop="dateCreated datePublished" datetime="2023-05-15T16:04:03+08:00">2023-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-16 17:10:33" itemprop="dateModified" datetime="2023-05-16T17:10:33+08:00">2023-05-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E7%8C%AE%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">文献分享</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>本篇主要分享了一篇有关<strong>森林水文模型</strong>的综述文献。<br>  以下内容仅为个人对文章的学习与理解，详情请阅读原文。</p>
+</blockquote>
+<span id="more"></span>
+
+<center>
+<img data-src="/posts/cb37d761/abstract.png" width="60%" height="60%">
+</center>
+
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p style="text-indent:2em">植树造林作为基于自然的解决方案(NbS)在应对气候变化和可持续发展中发挥的作用日益得到认可。新出现的森林水文问题，例如如何平衡森林碳汇、水资源供给、森林健康和生物多样性，正处于处于自然资源管理和可持续性科学争论的中心。全球森林（1/3的陆地面积）提供了超过70%的淡水资源，但管理森林-水关系可能是复杂的。</p>
+
+<p style="text-indent:2em">森林供水的管理是由人来进行，不同经济部门在森林水资源安全上会着有不同程度积极或消极的侧重，并且会同时影响着林业政策的决定。于是，许多欧洲国呼吁将森林和水管理进行跨部门政策整合。例如，西班牙的一些政策轨迹显示，20世纪80年代，在水源地进行自然的植树造林，对地下水补给的影响还尚无定论的情况下，过度种植使得天然林面积增长，却导致了河流流量减少。对于处于地中海的森林，植树造林对地表水产生了长期的负面影响，需要有效的森林管理来维持地下水的补给，从而实现预期的水文服务供给。实际上，在全球范围内，为水资源来管理森林仍然存在挑战，在水资源的多重压力下，需要先进的工具来帮助森林流域的管理。</p>
+
+<p style="text-indent:2em">现代流域管理的决策制定往往受到多重目标的约束。例如，为了最大程度地发挥森林的供水和固碳等生态系统服务功能，森林规划者和流域管理者需要评估和权衡树木的用水，以同时实现吸收大气CO<sub>2</sub>和向下游提供供水的目标。这些优化需要先进的生态水文建模工具来描述生态系统服务的相互作用。为了正确地解决这类问题，往往需要先进、复杂和实用的基于科学的决策支持系统(Decision Support System，DSS)。DSS可以收集丰富的空间信息，并能在主要位置为决策者方便地提供模拟情景，是现代水资源管理一个强有力的手段，且基于科学的决策降低了人为管理带来负面影响的风险。水文模型是森林-水管理DSS的重要组成部分，具有综合、分析和预测能力，有助于更好地评估和优化各种复杂的管理方案，以便能在不同尺度上实现多种目的。此外，森林水文模型不仅可以更好地理解林分或流域尺度的水文过程，而且可以与DSS集成，以量化未来森林管理的水文响应，例如气候变化下的造林可能会造成的影响。</p>
+
+<p style="text-indent:2em">然而，鉴于森林管理涉及复杂的自然和社会经济问题，需要在不断变化的环境中满足多种要求，建模工具的应用仍然具有挑战。例如：成功的重新造林不仅仅是植树，还必须遵循生态水文学原则：“为正确的目的，在正确的地方，种植正确的树木”；在维持森林生态系统服务的同时，又如何通过森林管理实践来提高森林对气候变化(即干旱)的恢复力。最近，对75篇研究128种造林行为影响的meta分析表明，与自然土地相比，西班牙的造林政策改善了木材供应和碳储存，但没有提高其调节服务(生物多样性、土壤、水)。</p>
+
+<h1 id="Objectives"><a href="#Objectives" class="headerlink" title="Objectives"></a>Objectives</h1><p style="text-indent:2em">该研究的总体目标是：综合现有森林研究人员和土地管理者用于解决当代流域管理和新环境问题的水文建模工具的文献。具体而言，该研究尝试：（1）确定5个普遍的新兴流域管理问题；（2）比较可能对解决这5个问题有帮助的现有水文建模工具的优劣；（3）通过展示应用实例，指导模型用户选择最合适的工具，以有效实现预期目标；（4）识别森林水文建模和DSS开发中的不足和未来研究需求。</p>
+
+<h1 id="Identifying-emerging-management-problems-and-model-review-methods"><a href="#Identifying-emerging-management-problems-and-model-review-methods" class="headerlink" title="Identifying emerging management problems and model review methods"></a>Identifying emerging management problems and model review methods</h1><p style="text-indent:2em">该研究根据最近的IUFRO报告与专业知识，确定了以下5个普遍的森林流域管理问题：</p>
+
+<ol>
+<li>生态系统服务权衡与协同（例如：供水、水质、碳储存、生物多样性、居民生活等）</li>
+<li>流域恢复下景观对干扰的恢复力（例如：植树、规定的焚烧、物种转变、间伐等）</li>
+<li>面向弹性城市的城市林业和绿色基础设施（例如：减少暴雨洪涝、缓解“城市热岛”和“城市干岛”等）</li>
+<li>气候变化减缓与适应（例如：飓风、海平面上升、巨型野火等）</li>
+<li>累积流域效应（Cumulative Watershed Effects，CWEs）的评估和森林干扰阈值的确定（例如：树木采伐/再造林规划、流域修复、气候变化适应等）</li>
+</ol>
+<p style="text-indent:2em">围绕上述五个问题领域，该研究总共调查了47种建模工具（如下图所示），讨论了由于模型缺陷而导致的建模结果的不确定性、气候变化预测的固有挑战以及管理干预的影响，并提出了最有希望的建模方法，用于开发更好的森林流域管理DSS。</p>
+
+<center>
+<img data-src="/posts/cb37d761/figure1.jpg" width="80%" height="80%">
+</center>
+
+<h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><p style="text-indent:2em">在过去的二十年中，水文模型越来越复杂(例如,明确考虑空间异质性,生物地球化学循环)和综合(如植被、土壤、地形、大气等)。近10年来，超级计算机、云端存储与计算、遥感技术和地球信息系统等快速发展，使得能从大型流域到全球的大范围在更精细的尺度上进行详细的流域再现和水文建模（例如RHESSys模型、WRF-Hydro、WaterWorld等）。</p>
+
+<p style="text-indent:2em">在Web of Science上使用关键词“Distributed Watershed Hydrological Modeling”（分布式流域水文模型）时，产生了 1506 条记录（1991-2022年）。然而，在之前的研究中加入关键词"Forest"（森林）时，仅有15%关于分布式水文建模的被记录。以分布式水文植被土壤模型（DHVSM，1994年）为代表的分布式森林水文建模出版物数量自2010年以来一直保持稳定，这表明模型在森林流域管理中的应用存在分歧趋势。分布式建模倾向于包含非森林生态系统的大型流域，并将森林流域过程与下游以农业用地或城市地区为主的非森林景观联系起来。此外，正在出现更多的模型，以解决21世纪未来气候变化对水资源在细尺度和粗尺度上的影响。</p>
+
+<p style="text-indent:2em">该研究将33种建模工具按时间和空间尺度分组，以比较模型功能，以方便模型使用(如下图所示)。</p>
+
+<center>
+<img data-src="/posts/cb37d761/figure2.jpg" width="80%" height="80%">
+</center>
+
+<p style="text-indent:2em">例如，分布式水文模型DHSVM已被确定为最适合于降雪为主的山地森林流域；DRAINMOD-Forest则是针对由于土壤排水不畅而导致地下水位较高的平地设计的。许多模型随着时间的推移，功能（例如，地下水变化）或扩展的生态系统（例如，农田、草地或林地）得到了改进，具有针对特定应用的多个版本。例如，DHSVM 最初是在 1990 年代初开发的，用于表征在森林流域气候和土地覆盖的变化下的流域水文过程和工程潜力，但现在已被用来表征城市景观、冰川水文动态、河流热动态、城市水质以及森林-雪积累相互作用。</p>
+
+<p style="text-indent:2em">Web of Science搜索表明，SWAT，InVEST，SCS-CN，SPARROW，WEPP，DHSVM，RHESSys模型是量化水量、水质最流行动态模型的代表，并且Budyko框架广泛用于长期平均水文分析。</p>
+
+<p style="text-indent:2em">水文模型因假设、理论、目标、尺度、结构、效用、数据需求和可移植性而异。据此，该研究针对五个问题领域提出了模型使用建议（如下图所示）。使用难度由运行每个单独模型的数据需求决定。解决森林水分管理问题的DSS工具必须根据目的、范围、技术复杂性和用户专长进行设计。该研究展示了如何使用模型来回答实际的管理问题，并为选定的模型提供了例子。</p>
+
+<center>
+<img data-src="/posts/cb37d761/figure3.png" width="80%" height="80%">
+</center>
+
+<h2 id="Managing-forested-watersheds-for-synergies-and-tradeoffs-of-various-ecological-services（1-管理森林流域，实现多种生态服务的协同与权衡）"><a href="#Managing-forested-watersheds-for-synergies-and-tradeoffs-of-various-ecological-services（1-管理森林流域，实现多种生态服务的协同与权衡）" class="headerlink" title="Managing forested watersheds for synergies and tradeoffs of various ecological services（1.管理森林流域，实现多种生态服务的协同与权衡）"></a>Managing forested watersheds for synergies and tradeoffs of various ecological services（1.管理森林流域，实现多种生态服务的协同与权衡）</h2><p style="text-indent:2em">供水和固碳已经是公认的两种重要的森林流域生态系统服务。饮用水公用事业正在不断寻求维持水源区林地的方法，来保护水质和维持供水，以应对人口增长和气候变化带来的日益严重的水资源压力。森林水分和碳循环紧密耦合，这种碳收益和水损失关系被认为是一种生态系统的权衡，森林生产力与生物多样性则可视为生态系统服务的协同。</p>
+
+<p style="text-indent:2em">水文和碳汇的模拟模型及其权衡可分别追溯到20世纪60年代和90年代。其中一些模型已被纳入决策支持系统(DSS)，用于指导森林管理，最小化环境影响的同时最大程度的提高生态系统服务。DSSs被认为是能为决策者可视化有效信息的中心工具，通常结合地理空间信息技术，并同时考虑水供应和需求动态、碳储存以及因气候、土地利用和人口增长在时间或空间上的变化引起的权衡。下面将更详细地讨论几个例子。</p>
+
+<p style="text-indent:2em">例如，美国地质调查局(USGS)拥有超过150个开源的水文工具软件( https://water.usgs.gov/software/lists)免费提供给公众使用。一些流行的模型，如HSFP，SWAT，PRMS，SPARROW已在美国各地具有不同土地利用类型的流域进行了应用。美国环境保护署（EPA）作为监管机构，支持基于SWAT开发的HAWQS（水文和水质系统）以及其他用户友好的水质模型（Watershed Assessment、Tracking and Environmental Results System、GeoViewer、EnviroAtlas）的开发。这些模型提供了与生态系统服务、化学和非化学胁迫以及人类健康相关的地理空间数据和分析。</p>
+
+<p style="text-indent:2em">SWAT模型最初是在美国农业部（USDA）的支持下为农业用地创建的，但已针对森林条件下的应用进行了修改。由于其简单易用，美国农业部土壤保护局（SCS）曲线数字法已被广泛用于估算缺乏资料的小流域（包括以森林为主的流域）的暴雨径流。同时，也有其他研究利用流域植被调控试验的经验数据，开发了类似"曲线"类型的模型（产水量响应曲线，Water Yield Response Curve, WYRC），WYRC是通过树木移除面积、流域能量指数和树木移除时间构成的函数来估算每年的水量增加。近年来，基于Budyko能量和水分平衡框架的"自上而下"模型，被用于估算森林覆盖变化和气候变化下长期平均产水量的响应。</p>
+
+<p style="text-indent:2em">美国农业部林务局还开发了一个生态系统服务模型，WaSSI。WASSI模型能通过从全球通量网络数据中提取的土地覆盖类型的水分利用效率(WUE)参数，将碳通量与蒸发量(ET)耦合，从而模拟关键的生态水文和碳通量，包括产水量、蒸发量(ET)、总初级生产力(GPP)和净生态系统生产力(NEP)。WASSI模型是公开的模型，实现简单，对数据要求最低，因此在全球范围（美国、澳大利亚、中国、墨西哥、欧洲等）都有研究用于评估森林管理、城市化、干旱和气候变化对生态系统服务的影响。该模型还可以通过web界面，在8位的水文单元下检验不同森林转换和气候变化情景下对供水压力的影响。有WaSSI建模的研究结果表明，森林占美国本土陆地总面积的36%，但占地表水总产量的50%以上。</p>
+
+<p style="text-indent:2em">在西班牙，已正式应用各种工具在平衡水资源的经济成本和效益的森林管理决策中。例如，García-Prats等人（2018）开发了一种新颖的水经济建模框架，用于制定最佳的森林与水资源管理策略。该模型明确地整合了一维土壤水文模型HYDRUS、异速生长模型和管理成本数据库。该模型使用地中海环境下特定物种生长和产量的异速生长方程，来模拟树冠覆盖和生物量随时间的变化，确定了能最大化流域层面总净效益的最佳造林时机。</p>
+
+<p style="text-indent:2em">与传统的水文模型相比，以TETIS 为代表的简洁模型在描述植被动态和碳循环方面具有优势。能精确再现碳动态的机理模型则能允许决策者预测植被演变及其对水资源的影响，从而根据更完整的信息做出决策，如水和其他生态系统服务变量之间的权衡。</p>
+
+<p style="text-indent:2em">有研究发现InVEST仍是在量化流域和国家尺度多种生态系统服务之间的相互作用上最为广泛使用的工具。InVEST可以评估18种不同生态系统服务的价值，包括碳储存，水产量，养分保留以及娱乐和旅游。</p>
+
+<p style="text-indent:2em">量化重新造林对水产量的效益需要平衡的方法和全面的工具。生态系统服务之间的权衡（即控制土壤侵蚀、碳储存增加和水产量减少）已得到广泛认可。Wang等针对中国北方旱地，开发了"以产水量为导向"的实用决策程序，以优化森林结构，实现"多功能森林（Multiple Function Forests，MFF）"目标。MFF的设计目的是在控制土壤侵蚀，考虑区域土壤水分承载能力的同时，保持森林生物量、抵御暴风雪的破坏，并提供适当的水分供应。该研究推荐了一种平衡产水和树木生长的多功能林(MFF)"理想"林分结构。</p>
+
+<h2 id="Watershed-ecosystem-restoration-with-tree-planting-forest-thinning-and-wildland-fires（2-以植树造林、森林间伐、野火为主的流域生态系统恢复）"><a href="#Watershed-ecosystem-restoration-with-tree-planting-forest-thinning-and-wildland-fires（2-以植树造林、森林间伐、野火为主的流域生态系统恢复）" class="headerlink" title="Watershed ecosystem restoration with tree planting, forest thinning, and wildland fires（2.以植树造林、森林间伐、野火为主的流域生态系统恢复）"></a>Watershed ecosystem restoration with tree planting, forest thinning, and wildland fires（2.以植树造林、森林间伐、野火为主的流域生态系统恢复）</h2><p style="text-indent:2em">流域生态修复是许多机构和政府一项的主要任务，使流域能恢复其功能、服务以及在气候变化（干旱、野火）下复原的能力。从控制入侵物种到种植树木以控制土壤侵蚀和野火发生后的水质退化，全球范围内在流域恢复中使用的策略和技术各不相同。近年来，为了改善流域健康，提高木材产量，降低火灾风险，增加供水，在流域源头恢复中开始提倡有计划的森林焚烧、间伐和物种转变。</p>
+
+<h3 id="Forest-thinning-for-restoring-ecological-and-hydrological-functions（森林间伐以恢复生态和水文功能）"><a href="#Forest-thinning-for-restoring-ecological-and-hydrological-functions（森林间伐以恢复生态和水文功能）" class="headerlink" title="Forest thinning for restoring ecological and hydrological functions（森林间伐以恢复生态和水文功能）"></a>Forest thinning for restoring ecological and hydrological functions（森林间伐以恢复生态和水文功能）</h3><p style="text-indent:2em">间伐可提高林分对环境压力的抵御能力，例如干旱、虫害、极端温度或野火，，因为间伐通常会减少生态系统蒸散量、改变积雪模式，并至少在短期内增加总产水量和地下水补给。然而间伐的水文效应差异较大，会被许多环境因素所影响。</p>
+
+<p style="text-indent:2em">水文模型已被应用于评估林分和流域尺度上森林间伐和树种转化的影响。有研究系统地评估了35个模拟实验，以量化森林皆伐和间伐对干旱森林地下水补给和泉水生态系统的影响。该研究表明，间伐比皆伐导致了更大的地下水补给量。与皆伐地相比，部分稀疏森林中地下水补给对减少升华和蒸发的响应更为积极和强烈。该研究还比较了火灾和森林间伐的几种基于过程和统计的通用模型（例如RHESSys, MODFLOWPRMS, SWAT, WaSSI, MIKE SHE, DHSVM），发现这些模型需要大量的空间和时间数据集，而这些数据集很少可用于大型景观。该研究建议，对于具有特定的含水层、土壤类型或地质的省份，需要长期的实地数据来确定地下水补给的最佳间伐量。还有研究应用WaSSI模型来评估美国各地产水量对森林间伐，全球变暖和降水变化，以及这些假设情景组合的敏感性。研究表明，产水量对2°C空气温度上升的响应幅度约为LAI减少50%情景的一半。</p>
+
+<p style="text-indent:2em">在2000年代期间，为了更好地管理日本的雪松和柏木人工林，以改善流域健康、生物多样性和供水，日本各地都对间伐（包括皆伐和选择性间伐）对森林水文的影响进行了研究，同时也开发了相关建模工具用于估算林冠截留和蒸散量（ET）。有研究综述了森林管理(如间伐、收获等)对决定森林水文响应的最重要过程——ET的影响。该研究表明1990年代开发的大型广义ET模型，如BAT，SiB，VIC，SWAT已被普遍运用于评估大规模森林砍伐对区域到全球水循环的实际影响。其他生态系统模型如20世纪90年代开发的Forest-BGC和BIOMEBGC及其升级版描述了水、碳和养分循环，但对林分或集水区尺度的森林管理实践关注较少，实际应用受限。然而，该研究认为，2000年代为特定景观、特定地区、森林类型（物种）和目的开发的模型，例如 FLATWOODs、HYLUC、KOMATSU-ET模型、KOMATSU-ET 模型、WaSSI、DLEM更适合实际使用。解决林分到流域尺度上特定的森林管理问题，往往需要将森林生物物理信息（即树木胸径和树干密度数据）和叶面积指数ET过程（即林冠截留、林下蒸发和树木蒸腾）紧密耦合的模型。广泛使用的ET模型包括Penman-Monteith方程和简化版本如如Priestley-Taylor方程以及经验模型。</p>
+
+<h3 id="Wildland-fires（野火）"><a href="#Wildland-fires（野火）" class="headerlink" title="Wildland fires（野火）"></a>Wildland fires（野火）</h3><p style="text-indent:2em">在火灾后进行流域恢复，或有计划的焚烧，以此来管理主要受野火影响的森林，需要清楚地了解水文对火灾的反应。目前，我们对火灾和燃料的管理将如何影响流域水文过程和功能的理解有限，且缺乏定量预测工具。森林火灾的研究主要集中在沉积物物的流失上，其可能在预测的燃烧值上增加三个数量级。不过，近十几年来，由于更频繁和灾难性的季节性火灾，有关野火的水文研究不断增加。</p>
+
+<p style="text-indent:2em">一些通用工具，如RHESSys，WEPP，SWAT，DHSVM和MIKE SHE模型，已被改进用于评估野火对径流和土壤侵蚀的影响。RHESSys是一个基于过程的综合模型，旨在模拟异质地形上的水、碳和养分循环和运输。该模型的结构为景观的空间嵌套分层表示，具有与不同级别特定景观对象对应的一系列水文、小气候和生态过程。RHESSys对于管理决策而言数据要求很高，但它已在全球范围内应用于各种气候条件和生态系统类型的研究。该模型的一个变体是RHESSys-WMFire，它将野火行为与生态水文学和植被动态相耦合，来预测气候变化对山区流域水循环和碳循环的影响。GeoWEPP和WEPPCloud由原始的WEPP模型演变而来，通过基于Web的用户界面用于评估野火对土壤侵蚀的影响以及指导火后响应。有研究将FlamMap (火灾行为模型)和WEPP结合，预测了坡面和流域层次的火灾对沉积物和水质的影响。也有研究采用改进的MIKE SHE模型，以美国加利福尼亚州中部的一个中型流域为研究对象，研究了火灾规模对季节径流量和年径流量响应的影响。该研究发现季节径流量和年径流量响应与火灾规模呈线性关系，并且年径流量响应受林龄影响，且在湿润年普遍较高。基于物理的分布式DHSVM模型已被广泛应用于美国西部山区流域和积雪为主的地区，用于了解在火灾后抢救性砍伐的情况下，路网和森林管理对其峰值流量、暴雨径流和泥沙负荷的影响。同时，经验模型、遥感和数值模型也会被嵌入土地规划和火灾响应相关DSS的工具中。其中一些是基于对火灾脆弱性的表征，另一些工具则描述了所涉及的物理过程。</p>
+
+<p style="text-indent:2em">在地中海地区，包括BEHAVE，CELLULAR AUTOMATA Model和Prometheus在内的FlamMap等程序是著名的火灾模拟模型，可以帮助识别西班牙受火灾影响最严重的地区。如RHESSys-Fire和Fire-BGC的复杂模型，则需要理解水文学、生物地球化学和沉积物输运对火灾的响应机理。FireEarth是一个耦合火势蔓延、生态水文和土壤侵蚀模型的模型框架，用于表征水资源管理中对火灾的脆弱性和复杂性。还有研究应用SWAT和CE-QUAL-W2模型评估了葡萄牙一个水库流域发生的火灾对水质的影响。CE-QUAL-W2模型针对对水位、温度、营养盐、总悬浮固体、叶绿素a和溶解氧进行了校准，通过调整土地利用特征(曲率,作物管理因子)和土壤性质(土壤可蚀性)来评估火灾不同严重程度的影响。</p>
+
+<h2 id="Urban-forestry（3-城市林业）"><a href="#Urban-forestry（3-城市林业）" class="headerlink" title="Urban forestry（3.城市林业）"></a>Urban forestry（3.城市林业）</h2><p style="text-indent:2em">城市树木和森林因其生态水文功能（削减暴雨径流、改善水质、遮荫降温、净化空气和适应气候变化等）和成本效益，对城市居民的好处日益凸显。城市森林分布、冠层调控和树种选择能够显著改变城市流域水文过程。然而，城市规划者很少将城市林业作为水资源综合管理（integrated water resource management，IWRM）的工具。在低影响开发（Low Impact Development，LID）、海绵城市（Sponge Cities）、基于自然的解决方案等城市发展新范式下，需要先进的工具来指导实践这些现代城市化战略。</p>
+
+<p style="text-indent:2em">水文和水力工程师使用数值模型(例如理想模型)设计城市防洪工程结构有着悠久的历史。目前，已有多个水文模型能够模拟森林对城市水文的影响，并对其他的雨洪管理领域开放，其中包括i-Tree Hydro, SCS-CN, HSPF, SWMM, SWAT, RHESSys, VIC, WaSSI。HSPF和SWMM模型是由美国EPA支持开发，用于城市环境中雨洪的管理；SCS-CN模型是由USDA自然资源保护署开发，用于估算峰值流量。HSPF、SWAT、RHESSys、WaSSI和VIC模型已被用于评估在具有多种土地类型的流域内，城市化对水文的影响。传统的森林水文模型如DHSVM等也已被改进用来模拟城市环境的水质。</p>
+
+<p style="text-indent:2em">城市森林社区特别感兴趣的是iTree Hydro建模工具，该工具可以评估森林和植被管理如何影响城市雨水量和流量，以及其他绿色基础设施的水文效益（如LID影响）。i-Tree Hydro模型由美国农业部森林局管理和支持，是一个半分布式空间模型，能模拟流域和非流域地区在单一降水事件或连续天气下径流的数量和质量。ITreeHydro ( https://www.itreetools.org/tools/hydro) )可以帮助城市森林管理者和规划者量化树木、植被和不透水区域的变化会如何影响当地的水文。iTree - Hydro模型不依赖于数据的可用性，因此它可以作为一个规划工具，在大多数城市地区常见的数据限制下，水量和水质的预测具有稳健性。然而，集成的i-Tree建模方案并没有解决城市景观水文空间上的变异性。计算能力和技术的提高，以及空间数字数据的可获得性，能使流域的空间表达和精确管理更加明确，这对于水文过程未得到较好监测和理解的异质性城市流域尤为重要。例如，由于遥感领域往往忽略了城市地区，我们对城市土地利用的蒸发速率了解甚少。</p>
+
+<p style="text-indent:2em">有研究对比分析了43种用于模拟流域尺度城市水文系统的建模方法。该研究认为城市流域是复杂的，现有对城市和自然水文系统之间相互作用的理解是不够的，同时受限于空间数据的可获得性，模型存在高度的不确定性。此外，水文过程的物理尺度与模型应用的分辨率之间存在时空差距。因此，城市水文学常常被简化为研究不透水表面的地表径流或管道系统的水力学。</p>
+
+<h2 id="Climate-change-mitigation-and-adaptation（4-减缓和适应气候变化）"><a href="#Climate-change-mitigation-and-adaptation（4-减缓和适应气候变化）" class="headerlink" title="Climate change mitigation and adaptation（4.减缓和适应气候变化）"></a>Climate change mitigation and adaptation（4.减缓和适应气候变化）</h2><p style="text-indent:2em">人类活动造成的气候变化及其对森林的直接或间接的作用，会影响着森林水资源。IPCC(2021)第六次评估报告指出，未来100年及以后，气候变化对森林和水资源的影响可能更加广泛。气候变化及其对森林水文的影响具有差异性和不可预测性。例如，在未来100年，北美西南部的径流预计将减少，而在东北地区，由于降水的增加，则会预计出现相反的趋势，未来其他地区的径流变化可能会更大。</p>
+
+<p style="text-indent:2em">为了适应多变的气候并减缓其对水文情势的影响，土地管理者和政策制定者迫切需要创新的森林管理策略和先进的DSS工具。然而，由于未来气候变化以及森林如何响应气候存在较大的不确定性，预测水文对气候变化的响应具有挑战性。由于PRMS、SWAT、MIKE SHE、DHSVM等传统流域水文模型都是由降水、气温和潜在蒸散作为主要气候胁迫驱动的，现已被用于应对气候变化对产水量的影响。应用的例子包括在国家层面用VIC、WaSSI等模型预估气候变化对美国供水的影响；国内则有研究用RHESSy等复合景观模型评估了气候变化对中国北方一个供水流域的影响。针对具有复杂地形的区域，已有研究应用DHSVM等分布式水文模型来分析夏威夷热带地区气候变化和入侵物种的综合影响。在这些评估中，基于大气环流模式(GCMs)的气候预估被用来预测不同社会经济路径(例如RCP8.5)下的未来气候情景。在德国，有研究利用LWFBROOK90水文模型根据7个森林监测点1961-2019年的历史数据，模拟了2010-2100年的水量平衡。该研究使用MPI-ESM-REMO(MPI/REMO)和EC-Earth-RCA4(ECE/RCA4)两种全球和区域环流模式的组合，以及两个RCPs (2.6和8.5)来模拟，结果表明，在RCP8.5情景下，研究区域将显著变得干旱，而在RCP2.6情景下，研究区域则无显著变化趋势。</p>
+
+<p style="text-indent:2em">GCM是制作者基于不同气候模式假设开发的，在表征地球系统内部大气-陆面相互作用的复杂性方面，GCM的能力正在不断提高。然而，全球气候模式的空间分辨率一般较大(&gt; 100km)，这将导致针对特定流域或区域预估气候变化(特别是降水)的不确定性会较大，于是通常会使用多个经验GCM或动态的降低尺度来来进行水文预测，以分析其不确定性。例如，有研究利用一组经验回归模型(即根据降水量和ET的函数来表示地下水位的波动)和四个全球气候模式预估的气候数据评估了美国东南部湿地水期的气候变化效应。</p>
+
+<p style="text-indent:2em">认识到传统水文模型在描述植被动态等生物过程对气候变化响应方面的不足，全球变化的建模团体和各种机构已经投入了更多的精力来开发，在多个尺度上考虑包括碳、水、氮和能量平衡的生物物理过程的模型，以用于全球应用。例如，基于能量的陆面模式，利用更精细的时间尺度的遥感数据，来模拟土壤、大气和植被界面的能量平衡，并与分布式水文模型相结合，以更好地估算蒸散和流量，这样的模型包括其中包括生物圈-大气传输模型(Biosphere-Atmosphere Transfer Scheme，BATS)、简单生物圈模型(Simple Biosphere Model，SiB)和WRF-Hydro。</p>
+
+<p style="text-indent:2em">为了描述森林植被功能(即产水量)等陆面过程与气候系统之间真实相互作用和反馈，需要全球气候模式和植被动态之间的紧密耦合。动态全球植被模型(DGVMs)可以模拟长期气候变化情景下气候、森林和水文之间的相互作用，其通常包括生物物理学、植物生理学、土壤生物地球化学和动态植被与土地利用4个核心组成部分。DGVMs的例子主要有：Hybrid V3.0、MC2、Lund-Postdam-Jena (LPJ)、CLM、IBIS和DLEM。</p>
+
+<p style="text-indent:2em">MC2模型是DGVMs的一种类型，用于在区域、大陆和全球尺度的研究中，预测长期的森林动态和水碳循环对气候变化的响应。该模型能以月尺度模拟一个网格单元(10km×10 km)上树木和草地对光照、水分和养分的竞争。其生物地球化学模块会根据植被类型参数，计算受气温和土壤湿度影响的水分收支(ET、产水量)、植被生产力(NPP)和碳收支(NEP)；火灾模块会根据物种类型参数，将碳储量转化为燃料，利用两种可燃物湿度指数的阈值来判断火灾发生；生物地理学模块则以年度将每个格网单元划分为一个植被类型。</p>
+
+<p style="text-indent:2em">针对任何区域或特定问题制定减缓和适应气候变化的战略和政策，需要在先进的决策支持系统辅助下共同努力。例如，松树综合网络：教育、减缓和适应项目(PINEMAP)开发了一个DSS(https://products.climate.ncsu.edu/pinemap/)来帮助森林管理者在适应气候变化下来管理美国南部的火炬松林。从PINEMAP DSS的Web界面，用户可以找到来自20个GCMs和两个温室气体排放情景( RCP4.5和RCP8.5)的历史和降低尺度的未来气候数据(4km尺度上的降水和气温)，来自WaSSI模拟的年产水量和生态系统生产力结果，林分结构(叶面积指数、茎干生物量)，以及3-PG森林生长模型在HUC12尺度上的GPP和NPP模拟。PINEMAP DSS的开发采用了眼动追踪(Eye-tracking)技术，可用于评估气候变化下火炬松生长的气候风险和机会。DSS也有潜力通过确定哪些站点最适合集约管理和碳储存，哪些站点最适合在未来气候变化下进行低密度森林管理(即间伐)，来帮助指导森林恢复工作中生态系统服务的补偿。</p>
+
+<h2 id="Assessment-of-cumulative-watershed-effects-CWEs-of-environmental-change（5-环境变化下累积流域效应的评估）"><a href="#Assessment-of-cumulative-watershed-effects-CWEs-of-environmental-change（5-环境变化下累积流域效应的评估）" class="headerlink" title="Assessment of cumulative watershed effects (CWEs) of environmental change（5.环境变化下累积流域效应的评估）"></a>Assessment of cumulative watershed effects (CWEs) of environmental change（5.环境变化下累积流域效应的评估）</h2><p style="text-indent:2em">在全球气候变化、野火、飓风、虫害和疾病、风倒林地以及人类干扰(如采伐和城市化)等因素的影响下，流域在时间和空间上会不断变化。在设计流域恢复计划时，有必要评估过去和未来的累积流域效应（CWE），以便在设计流域恢复计划时做出具有成本效益的森林管理决策。</p>
+
+<p style="text-indent:2em">累积流域效应(CWEs)被定义为在过去、现在和可预见的将来对关键流域过程产生单独微小但集体却影响显著的作用或干扰。CWEs通常关注对水量、水质、河道形态、河道内木材等水生生境属性或功能的综合影响。在过去的几十年中，已经开发了各种评估CWEs的程序或工具。三类工具已被广泛用于评估CWEs，分别为基于清单的评估、仿真模型的耦合和决策支持系统(DSS)。</p>
+
+<h3 id="Inventory-based-assessment（基于清单的评估）"><a href="#Inventory-based-assessment（基于清单的评估）" class="headerlink" title="Inventory-based assessment（基于清单的评估）"></a>Inventory-based assessment（基于清单的评估）</h3><p style="text-indent:2em">基于清单的评估是CWEs的常用方法。有相当多的评估工具如Washington Watershed分析工具、Oregon Watershed评估工具、FEMAT Watershed分析法和British Columbia Watershed评估程序。有研究提供了截至2010年的这些程序的概况。这些基于清单的评估方案提供了一个全面的框架，包括利益相关方参与、项目范围界定、实地数据收集、流域状况分析、公布的信息综合和建议。评估的内容包括水量、沉积物及其形态、水质、河岸生境和河道内木材补充等。这些评估为管理决策提供了在现有和可预见的未来条件下可能的风险和不确定性信息。该清单法的一个主要缺点是难以捕捉或解决未来气候变化的可能影响，因为气候变化正是多种可能情景下深度不确定性的来源。此外，信息的综合在很大程度上依赖于主观的专业判断。尽管如此，基于清单的评估仍然很受欢迎，因为在许多流域普遍缺乏足够的数据的情况下，它可以容易且有效地执行。</p>
+
+<h3 id="Coupling-of-simulation-models（仿真模型的耦合）"><a href="#Coupling-of-simulation-models（仿真模型的耦合）" class="headerlink" title="Coupling of simulation models（仿真模型的耦合）"></a>Coupling of simulation models（仿真模型的耦合）</h3><p style="text-indent:2em">由于CWEs涉及各种流域过程和功能，单个模型(例如水量、水质模型或河道木材运输模型)不能表现出所有主要物理过程。因此，就需要耦合不同模型来用于评估CWEs。SWAT模型是目前应用最广泛的模拟水量、泥沙和水质的工具，特别是当它与其他模型耦合用于评估CWEs时。例如，有研究将SWAT与GRASS (地理资源分析支持系统)相结合，评估了美国Tangipahoa流域的平均流量、基流、水质和泥沙负荷。也有研究将SWAT与动态径流和侵蚀模型(KINEROS2)耦合，在GIS中开发了自动地理空间流域评估工具。</p>
+
+<p style="text-indent:2em">虽然耦合建模方法具有能直接评估气候变化和相关森林干扰下CWEs的优势，但CWEs的模型耦合需要大量的数据用于校准和验证。此外，模型之间的耦合过程需要稳健地构建和检验。随着更多模式的耦合和更多过程的加入，模拟的复杂程度和不确定性都会增加，这可能导致该方法最后难以实施。</p>
+
+<h3 id="Decision-support-systems（决策支持系统，DSS）"><a href="#Decision-support-systems（决策支持系统，DSS）" class="headerlink" title="Decision support systems（决策支持系统，DSS）"></a>Decision support systems（决策支持系统，DSS）</h3><p style="text-indent:2em">DSS是一个计算机化的"基于专家知识"的系统，能辅助数据的整理、分析和综合，以便做出明智的决策，及时解决问题，并提高处理规划甚至管理的效率。DSS可以被定义和采取多种不同的形式，但多年来它们已经演变成能交互的灵活软件，使管理者能在面对一个结构不良或非结构化的问题时，通过与数据和分析模型的直接交互来进行合理的管理和规划决策。自20世纪70年代以来，多目标规划方法被广泛用于DSS的开发。这些方法在冲突目标之间提供了有价值的权衡信息，当与多准则决策分析耦合时，可以通过分析多个准则来评估各种适应方案的优势和劣势，从而帮助决策者选择最合适和满意的方案。生态水文模拟和多目标优化与进化算法的耦合代表了森林流域复杂性最复杂的解决方案之一，为制定包括社会经济在内的多目标管理方案提供了可能。</p>
+
+<p style="text-indent:2em">Reynolds建立了第一个用于辅助流域条件评价的DSS-"生态系统管理决策支持系统（Ecosystem Management Decision Support，EMDS）"。它具有逻辑化处理环境评估、多准则决策分析战略规划、能用决策树和贝叶斯网络来制定战术规划等特点。有研究将EMDS中的WAS (Watershed Assessment for Sediment，流域泥沙评价)应用于Mona湖流域状况的评估。流域决策支持系统是为了解决涉及社会经济和环境影响，以及各种自然和人为干扰因素（例如水文和水力条件、人类活动）的复杂流域管理问题而开发的。水文外源性流入、未来人类需求相关的不确定性增加了复杂性水平，因此需要能包括目标之间潜在权衡在内的多目标水平上工作的复杂工具。</p>
+
+<p style="text-indent:2em">Web of Science上对“Forest Watershed Decision Support System”关键词进行搜素，其中70%以上来自美国，加拿大和中国，且大多数文献是在过去七年中出版的。创建这些DSS工具有着不同的具体决策目标，从保护水量和水质到适应不同用水需求的水量分配。各种类型的水文模型(如SWAT、In VEST、WaSSI等)已单独或联合地应用于DSS中。例如，CAFE将三种在不同空间尺度工作的不同生态水文模型(BIOME-BGC_MuSo、TETIS和RHESSys)结合到DSS系统。</p>
+
+<h3 id="Forest-disturbance-thresholds-for-managing-CWEs（用于管理CWEs的森林干扰阈值）"><a href="#Forest-disturbance-thresholds-for-managing-CWEs（用于管理CWEs的森林干扰阈值）" class="headerlink" title="Forest disturbance thresholds for managing CWEs（用于管理CWEs的森林干扰阈值）"></a>Forest disturbance thresholds for managing CWEs（用于管理CWEs的森林干扰阈值）</h3><p style="text-indent:2em">森林干扰阈值可以为保护水文功能和最小化环境负面影响的管理决策提供直接和实用的指导，但目前普遍使用的基于小流域研究的森林砍伐阈值存在着方法学缺陷，因此可能缺乏可靠性。有研究推荐了一种稳健的技术（修正的双质量曲线, MDMC）用于定量确定年平均流量上的森林干扰阈值，该方法在流域尺度上制定随时间发展的累积水文效应与森林干扰之间的水文响应曲线。还有研究表明，水文对干扰的敏感性和响应阈值会因当地气候、流域性质和植被条件而显著不同。</p>
+
+<h1 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h1><p style="text-indent:2em">该研究确定的五个森林水管理问题会有重叠之处，并非相互独立的。例如，解决供水和碳服务之间的权衡(问题#1)是减缓气候变化(问题#4)和累积流域评估(问题#5)中需考虑的重要问题。同样，城市林业规划(问题#3)需要明确基于NbS原则的流域水文会如何响应生态系统恢复措施(问题#2)。</p>
+
+<p style="text-indent:2em">该研究表明，随着时间的推移，建模工具的数量逐渐增加，模型也编得更加复杂、集成化，对数据要求也更高，功能也更强大。该研究综述的重点是美国、加拿大、欧洲和东亚已经使用的工具。通过有限的实例，该研究表明，这些工具及其原则也有助于为其他地区的森林管理决策提供相关的知识。然而，该研究也指出了森林水文建模和模型应用在流域管理中的挑战。</p>
+
+<h2 id="Deficiency-of-forest-hydrological-modeling-for-decision-making（森林水文模型在决策中的不足）"><a href="#Deficiency-of-forest-hydrological-modeling-for-decision-making（森林水文模型在决策中的不足）" class="headerlink" title="Deficiency of forest hydrological modeling for decision making（森林水文模型在决策中的不足）"></a>Deficiency of forest hydrological modeling for decision making（森林水文模型在决策中的不足）</h2><p style="text-indent:2em">为了解决水资源短缺和可持续性问题，现代流域管理必须采用一种综合的方法，即认识到自然-人类系统的耦合和重视NbS方案。为了平衡气候变化和其他考虑下的短期和长期目标，决策者需要先进的工具来评估森林管理政策的不确定性和风险。例如，随着《联合国原住民权利宣言》的通过，原住民的利益和文化必须纳入当地森林流域管理决策中，以实现资源治理和使用中的环境正义。来自多方面利益相关者的加入，对于开发有效的模型和DSS工具至关重要，以此才可以真正地评估包括清洁水供应在内的各种生态系统服务之间的协同和权衡。</p>
+
+<p style="text-indent:2em">据此，该研究发现了当前建模工具中一些普遍存在的不足，这些不足可能可以在未来的研究和开发中得到改进。模型用户应该意识到这些模型的优点和局限性。需要改进的重要领域包括模型结构和过程、算法、集成、参数估计、缩放、数据可用性、气候情景生成以及模型访问和使用中的不确定性。</p>
+
+<p style="text-indent:2em">（1）模型结构与处理过程(Model structure and processes)。森林管理决策往往是基于过去、现在和未来流域条件的多重考虑。流域中物理、化学、生物和社会经济过程之间的相互作用是复杂的，必须加以整合来描述完整的流域动态。回顾大多数流域模型，特别是基于遥感的流域模型，可以模拟过去和当前的情况，但可能难以量化水量和水质对未来新条件的响应。例如，气候变化可能导致在某些地区发生了新的或极端的水文气候条件，如"雪上加雨"，这就需要新的建模方案来处理这个过程。</p>
+
+<p style="text-indent:2em">与MC2或DLEM生态系统模型不同，一般的水文模型，如VIC、PRMS或MIKE SHE，不能模拟化学气候条件变化下的植被动态，也不能模拟森林物种的转变，因此在预测森林覆盖变化下的水文变化时具有局限性。SWAT和WaSSI等通用模型的森林水文应用，大多将叶面积指数作为森林结构的替代指标，这会导致模型在森林管理实践(即间伐、计划焚烧)中不能明确地处理森林结构的变化(如LAI、DBH、树种等)。与之类似，传统的水文模型无法处理地上、地下以及厌氧条件下的生物地球化学过程（如Forest-DNDC模型）。回顾10个森林水文模型发现，冠层截留都是以类似的方式模拟，且根系分布在所有模型中仅被考虑用于根系吸水，但很少考虑林下植被及其生长情况。</p>
+
+<p style="text-indent:2em">模型应用中的挑战。RHESSys等基于过程的生态水文模型不仅依赖于研究人员对假设的检验和对非线性水文响应的理解，也需要决策者制定合适的情景分析来寻找替代方案。空间显式、以时间作为变量的确定性模型(例如WAVES)的优点是可以详细地描述气候、土壤、植被和关键过程(如能量、水、碳、养分循环等)之间的因果关系。然而，由于数据需求量大，且缺乏使用模型的专业知识，这类模型很少在日常森林管理中的应用。与之相反，常使用的是集成模型(例如Brook90模型)或更简单的经验模型(SCS-CN方法，Budyko框架)，所需的输入或参数较少。InVEST在全球范围内得到了广泛的应用，但作为一种数据驱动的工具，在公共和私营部门的决策中仍然被认为过于耗费资源</p>
+
+<p style="text-indent:2em">除了模型以外，用于累积水量评估的领域清单法将继续占据主导地位，但随着对气候变化的日益关注，DSS内耦合模拟模型将变得更加重要。例如，用于量化森林干扰阈值的MDMC技术在很大程度上依赖于水文和森林干扰长期数据的可用性，但这样的数据在很多流域都很少见。</p>
+
+<p style="text-indent:2em">（2）参数的不确定性(Parameter uncertainty)。为了推导出可能具有（或不具有）物理意义的最优化参数，模型的校准是必须的。在校准中，能将模拟结果与流域出口处实测的流量或水质匹配往往是唯一的目标。然而，对于ET模拟的准确性关注较少，ET通量往往高于径流，但很少有研究在流域尺度上进行测量。这样的做法可能会导致"等同性"现象发生，即不同的一系列参数却得到了相同的模型输出，更为严重可能会出现环境建模中的"错误匹配"问题。使用通量(即流量和ET)和状态变量(如土壤湿度、地下水位、LAI动态等)数据进行多准则模型校准，可能会提供代表现实的参数。此外，建模应尽可能使用实测数据，即数据驱动模型，以减少模型参数的不确定性。例如，将植被LAI的实测值或基于遥感的ET估计值作为输入变量，来驱动水文模型(如MIKE SHE、WaSSI等)（在这种情况下不一定要模拟LAI或ET）。通过这种方式，模拟结果可能比用模拟的植被属性或ET速率更有说服力。</p>
+
+<p style="text-indent:2em">（3）尺度不匹配(Scale mismatch)。森林管理或土地扰动的水文影响具有尺度依赖性。需要根据水资源问题的不同，确定合适的尺度来使用对应的建模工具。例如，与MIKE SHE、DHSVM或RHESSys等完全分布式流域水文模型不同，集成式模型(如Brook90模型、WAVES等)或半分布式流域模型(SWAT、PRMS、WaSSI)不模拟坡面过程，无法描述狭窄河岸带的水分和养分运移问题，难以在斑块尺度上评估最佳管理措施(Best Management Practices，BMPs)或森林恢复的效果。同样，基于遥感的能量或水分平衡模型(如VIC、WaterWorld等)在研究区域和全球水分平衡方面具有优势，但在空间上往往过于粗略，并且仅能在无云期直接解决林分层面的问题。在异质性较大的山区流域，气象测量往往在附近的低海拔地区进行。在这种情况下，对于由插值生成的山坡上的气候数据，特别是降水和辐射，存在很大的不确定性。从GCMs获得的对未来气候数据的预估，可以降尺度到几公里的分辨率，并使用历史数据进行偏差校正，然而，空间尺度仍然太大，无法用于小流域和中型流域的建模。</p>
+
+<p style="text-indent:2em">（4）未来气候、管理和政策的不确定性(Uncertainty of future climate, management, and policy)。未来的气候、人口、土地利用和土地覆被以及生态系统功能的变化是不确定的。在过去的三十年中，GCMs预测未来气候模式的能力有了显著的提高，对预测的信心也增加了。然而，根据模式模拟的气候结果仍存在较大的不确定性：不同的GCMs具有不同的模式结构和假设，对任何一个特定区域的气候变暖幅度都会有不同的预估。众所周知，降水预测是相当困难和不确定的，并且未来的温室气体排放模式是不确定的，其很大程度上取决于技术、政治意愿和生态系统的反应。</p>
+
+<p style="text-indent:2em">管理决策并不完全基于模型预测和物理科学。在预测CWEs的案例中，专业判断或传统知识往往起着至关重要的作用。这些都表明CWEs其中存在各种不确定性和挑战。森林规划周期通常较长，所涉及的不确定性可能会随着时间的推移而传播，导致预期结果的不确定性较大。为此，最近发展了一些新的方法，如贝叶斯统计，来量化和分析不确定性的来源。此外，气候条件变化（干旱、风倒林地(windthrow)和森林火灾等）带来的风险增加了森林决策过程的复杂性。对这些风险的预测也是不确定的，所以，开发能够综合应对多重风险和不确定性的新颖决策方法至关重要。这些方法(例如稳健决策)仍在发展中，却对于支持利益相关者的决策是必要的。稳健决策方法力求找到在所有未来条件下(例如气候变化)都能表现最佳的解决方案，目前正兴起采用模型(如InVEST、SWAT等)，来整合决策过程中各种生态知识细节。</p>
+
+<p style="text-indent:2em">研究需求。森林水文和流域管理中的建模和监测技术取得了巨大的进步，部分原因是计算能力和空间信息科学的进步。机器学习和深度学习等新兴的大数据分析方法为识别关键过程提供了新的手段，利用历史森林清查数据开发经验模型，并产生新的假设，以建立更有效的模型来描述森林流域的物理过程和减少参数不确定性。</p>
+
+<p style="text-indent:2em">土地管理者需要基于科学和用户友好的DSS。局部经验模型可能更适用于有监测数据的地区，如美国东南部将湿地松林经济与产水量相结合的应用。对于偏远地区或缺乏资料的流域，基于遥感的模型很可能是最有用的（例如ET Curve，WaSSI）。将经验模型和过程模型相结合的混合模型（如3PG-Hydro, WaSSI）则是理解和评估森林过程（例如水、碳）对管理行动敏感性的首选。评估模型复杂度和信息获取之间的权衡关系，才能真正开发出可广泛实施的实用决策支持工具。在未来的决策中，多准则DSS是必要的并且将发挥越来越大的作用。设计模型和DSS是一个迭代的过程，需要利益相关者早期参与，并和建模者的密切合作。将利益相关者从一开始就纳入决策过程，可以保障管理政策选择的现实性，并解决他们在未来气候变化下的目标、忧虑。</p>
+
+<p style="text-indent:2em">流域评估是景观恢复和长期土地规划管理的关键步骤。为了有效利用管理资源，需要更好地量化森林干扰阈值。不仅要为年平均流量设定阈值，还要为峰值流量、低流量、可变的目标水质目标和水生态系统完整性设定阈值。同时，由于水文响应随流域气候、土壤、植被和森林干扰程度的变化而变化，阈值也可能存在较大的变化</p>
+
+<p style="text-indent:2em">此外，需要一种模块化的建模方法来促进跨学科和跨机构的合作。由于地表水和地下水联系紧密，流域管理机构需要将水资源视为"一体"，水质模型必须正确模拟包括ET在内的所有水量通量。未来的森林水文学建模工作应考虑土壤-植物-大气连续体中的林分结构、树木水力特性和水势动态。研究应与国家森林调查分析(Forest Inventory Analysis，FIA)项目合作，以充分利用国家现有的关于林分属性(即物种、叶生物量)的大量数据。DSS应具有在正确的尺度上模拟森林管理的长期后果的能力，集成现代空间信息系统、图形技术、概率分析和人工智能，并易于被多个利益相关方访问，以便在知情的情况下进行协作和决策。</p>
+
+<h1 id="Conclusions"><a href="#Conclusions" class="headerlink" title="Conclusions"></a>Conclusions</h1><p style="text-indent:2em">该研究综述了47种水文建模工具，用于解决5个新出现的流域管理挑战，包括量化生态系统服务权衡、流域恢复评价、城市林业、气候变化减缓和适应以及流域干扰的累积评估。由于数据的可获得性和计算能力的提高，在过去10年中我们对气候变化和土地利用变化下水文响应的预测能力显著增强。然而，现有的森林水文模型很少明确地将森林结构信息与生态水文过程结合起来。模型使用者应认识到现有模型在描述扰动和未来条件下，流域物理化学过程具有异质性、模型尺度与研究区域的匹配度和模型输入数据可获得性等方面的局限性。模式选择应根据管理目标和规模、资源可获得性进行评估。本地开发的模型或参数较少的混合模型最有利于实际应用。以遥感技术为辅助的数据驱动模型在流域评估和开发DSS方面是富有成效的。面向长期森林流域管理的DSS，必须考虑未来气候预测和生态水文响应干扰的不确定性、决策和人类行为的风险、社会和文化流域价值以及环境正义和平等。</p>
+
+<p><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S0378112722007496">Forest hydrology modeling tools for watershed management:A review(原文链接)</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>庶几
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://owome.space/posts/cb37d761.html" title="文献分享：Forest hydrology modeling tools for watershed management:A review">http://owome.space/posts/cb37d761.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%96%87%E7%8C%AE/" rel="tag"># 文献</a>
+              <a href="/tags/%E8%8B%B1%E6%96%87/" rel="tag"># 英文</a>
+              <a href="/tags/%E6%A3%AE%E6%9E%97%E6%B0%B4%E6%96%87%E6%A8%A1%E5%9E%8B/" rel="tag"># 森林水文模型</a>
+              <a href="/tags/%E7%BB%BC%E8%BF%B0/" rel="tag"># 综述</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/b195462f.html" rel="prev" title="文献分享：海南热带雨林研究（李意德）">
+      <i class="fa fa-chevron-left"></i> 文献分享：海南热带雨林研究（李意德）
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Objectives"><span class="nav-number">3.</span> <span class="nav-text">Objectives</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Identifying-emerging-management-problems-and-model-review-methods"><span class="nav-number">4.</span> <span class="nav-text">Identifying emerging management problems and model review methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Results"><span class="nav-number">5.</span> <span class="nav-text">Results</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Managing-forested-watersheds-for-synergies-and-tradeoffs-of-various-ecological-services%EF%BC%881-%E7%AE%A1%E7%90%86%E6%A3%AE%E6%9E%97%E6%B5%81%E5%9F%9F%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%A7%8D%E7%94%9F%E6%80%81%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%8D%8F%E5%90%8C%E4%B8%8E%E6%9D%83%E8%A1%A1%EF%BC%89"><span class="nav-number">5.1.</span> <span class="nav-text">Managing forested watersheds for synergies and tradeoffs of various ecological services（1.管理森林流域，实现多种生态服务的协同与权衡）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watershed-ecosystem-restoration-with-tree-planting-forest-thinning-and-wildland-fires%EF%BC%882-%E4%BB%A5%E6%A4%8D%E6%A0%91%E9%80%A0%E6%9E%97%E3%80%81%E6%A3%AE%E6%9E%97%E9%97%B4%E4%BC%90%E3%80%81%E9%87%8E%E7%81%AB%E4%B8%BA%E4%B8%BB%E7%9A%84%E6%B5%81%E5%9F%9F%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E6%81%A2%E5%A4%8D%EF%BC%89"><span class="nav-number">5.2.</span> <span class="nav-text">Watershed ecosystem restoration with tree planting, forest thinning, and wildland fires（2.以植树造林、森林间伐、野火为主的流域生态系统恢复）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Forest-thinning-for-restoring-ecological-and-hydrological-functions%EF%BC%88%E6%A3%AE%E6%9E%97%E9%97%B4%E4%BC%90%E4%BB%A5%E6%81%A2%E5%A4%8D%E7%94%9F%E6%80%81%E5%92%8C%E6%B0%B4%E6%96%87%E5%8A%9F%E8%83%BD%EF%BC%89"><span class="nav-number">5.2.1.</span> <span class="nav-text">Forest thinning for restoring ecological and hydrological functions（森林间伐以恢复生态和水文功能）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wildland-fires%EF%BC%88%E9%87%8E%E7%81%AB%EF%BC%89"><span class="nav-number">5.2.2.</span> <span class="nav-text">Wildland fires（野火）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Urban-forestry%EF%BC%883-%E5%9F%8E%E5%B8%82%E6%9E%97%E4%B8%9A%EF%BC%89"><span class="nav-number">5.3.</span> <span class="nav-text">Urban forestry（3.城市林业）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Climate-change-mitigation-and-adaptation%EF%BC%884-%E5%87%8F%E7%BC%93%E5%92%8C%E9%80%82%E5%BA%94%E6%B0%94%E5%80%99%E5%8F%98%E5%8C%96%EF%BC%89"><span class="nav-number">5.4.</span> <span class="nav-text">Climate change mitigation and adaptation（4.减缓和适应气候变化）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Assessment-of-cumulative-watershed-effects-CWEs-of-environmental-change%EF%BC%885-%E7%8E%AF%E5%A2%83%E5%8F%98%E5%8C%96%E4%B8%8B%E7%B4%AF%E7%A7%AF%E6%B5%81%E5%9F%9F%E6%95%88%E5%BA%94%E7%9A%84%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="nav-number">5.5.</span> <span class="nav-text">Assessment of cumulative watershed effects (CWEs) of environmental change（5.环境变化下累积流域效应的评估）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inventory-based-assessment%EF%BC%88%E5%9F%BA%E4%BA%8E%E6%B8%85%E5%8D%95%E7%9A%84%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="nav-number">5.5.1.</span> <span class="nav-text">Inventory-based assessment（基于清单的评估）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Coupling-of-simulation-models%EF%BC%88%E4%BB%BF%E7%9C%9F%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%80%A6%E5%90%88%EF%BC%89"><span class="nav-number">5.5.2.</span> <span class="nav-text">Coupling of simulation models（仿真模型的耦合）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decision-support-systems%EF%BC%88%E5%86%B3%E7%AD%96%E6%94%AF%E6%8C%81%E7%B3%BB%E7%BB%9F%EF%BC%8CDSS%EF%BC%89"><span class="nav-number">5.5.3.</span> <span class="nav-text">Decision support systems（决策支持系统，DSS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Forest-disturbance-thresholds-for-managing-CWEs%EF%BC%88%E7%94%A8%E4%BA%8E%E7%AE%A1%E7%90%86CWEs%E7%9A%84%E6%A3%AE%E6%9E%97%E5%B9%B2%E6%89%B0%E9%98%88%E5%80%BC%EF%BC%89"><span class="nav-number">5.5.4.</span> <span class="nav-text">Forest disturbance thresholds for managing CWEs（用于管理CWEs的森林干扰阈值）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Discussion"><span class="nav-number">6.</span> <span class="nav-text">Discussion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deficiency-of-forest-hydrological-modeling-for-decision-making%EF%BC%88%E6%A3%AE%E6%9E%97%E6%B0%B4%E6%96%87%E6%A8%A1%E5%9E%8B%E5%9C%A8%E5%86%B3%E7%AD%96%E4%B8%AD%E7%9A%84%E4%B8%8D%E8%B6%B3%EF%BC%89"><span class="nav-number">6.1.</span> <span class="nav-text">Deficiency of forest hydrological modeling for decision making（森林水文模型在决策中的不足）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusions"><span class="nav-number">7.</span> <span class="nav-text">Conclusions</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">庶几</p>
+  <div class="site-description" itemprop="description">不定期的分享一些有意思的东西，要多来逛逛哦(´▽`ʃ♡ƪ)</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/2461500433" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;2461500433" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/10854350" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;10854350" rel="noopener" target="_blank"><i class="fa fa-fw fa-custom mybilibili"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">庶几</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
