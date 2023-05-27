@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"owome.space","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前言 本篇主要分享了一篇有关水生态系统服务评估的文献。     本文提出了一种评估水生态系统服务与核算水态系统服务价值的方法。 该方法可以将生态系统服务的压力、生态状态和提供联系起来。 提供了为每种生态系统服务提供了生物物理指标和经济评估方法。 该方法可被用于评估水生生态系统恢复的效益。 本文结果与Water Framework Directive的实施相关。    以下内容仅为个人对文章的学习与">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文献分享：Assessing water ecosystem services for water resoure management">
+<meta property="og:url" content="http://owome.space/posts/eb5cc35d.html">
+<meta property="og:site_name" content="OWO">
+<meta property="og:description" content="前言 本篇主要分享了一篇有关水生态系统服务评估的文献。     本文提出了一种评估水生态系统服务与核算水态系统服务价值的方法。 该方法可以将生态系统服务的压力、生态状态和提供联系起来。 提供了为每种生态系统服务提供了生物物理指标和经济评估方法。 该方法可被用于评估水生生态系统恢复的效益。 本文结果与Water Framework Directive的实施相关。    以下内容仅为个人对文章的学习与">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/abstract.png">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure1.png">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure2.png">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure3.jpg">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure4.jpg">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure5.jpg">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure6.jpg">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure7-1.png">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure7-2.png">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure7-3.png">
+<meta property="og:image" content="http://owome.space/posts/eb5cc35d/figure8.png">
+<meta property="article:published_time" content="2023-05-26T08:46:01.000Z">
+<meta property="article:modified_time" content="2023-05-27T10:46:10.582Z">
+<meta property="article:author" content="庶几">
+<meta property="article:tag" content="文献">
+<meta property="article:tag" content="英文">
+<meta property="article:tag" content="生态系统服务">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://owome.space/posts/eb5cc35d/abstract.png">
+
+<link rel="canonical" href="http://owome.space/posts/eb5cc35d.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>文献分享：Assessing water ecosystem services for water resoure management | OWO</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">OWO</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">4</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://owome.space/posts/eb5cc35d.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="庶几">
+      <meta itemprop="description" content="不定期的分享一些有意思的东西，要多来逛逛哦(´▽`ʃ♡ƪ)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OWO">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          文献分享：Assessing water ecosystem services for water resoure management
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-05-26 16:46:01" itemprop="dateCreated datePublished" datetime="2023-05-26T16:46:01+08:00">2023-05-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-27 18:46:10" itemprop="dateModified" datetime="2023-05-27T18:46:10+08:00">2023-05-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E7%8C%AE%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">文献分享</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>本篇主要分享了一篇有关<strong>水生态系统服务评估</strong>的文献。 </p>
+</blockquote>
+<blockquote>
+<ol>
+<li>本文提出了一种<strong>评估水生态系统服务</strong>与<strong>核算水态系统服务价值</strong>的方法。</li>
+<li>该方法可以将生态系统服务的<strong>压力</strong>、<strong>生态状态</strong>和<strong>提供</strong>联系起来。</li>
+<li>提供了为每种生态系统服务提供了<strong>生物物理指标</strong>和<strong>经济评估方法</strong>。</li>
+<li>该方法可被用于评估<strong>水生生态系统恢复的效益</strong>。</li>
+<li>本文结果与Water Framework Directive的实施相关。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>以下内容仅为个人对文章的学习与理解，详情请阅读原文。</p>
+</blockquote>
+<span id="more"></span>
+
+
+<h1 id="Assessing-water-ecosystem-services-for-water-resource-management（面向水资源管理的水生态系统服务评估）"><a href="#Assessing-water-ecosystem-services-for-water-resource-management（面向水资源管理的水生态系统服务评估）" class="headerlink" title="Assessing water ecosystem services for water resource management（面向水资源管理的水生态系统服务评估）"></a>Assessing water ecosystem services for water resource management（面向水资源管理的水生态系统服务评估）</h1><center>
+<img data-src="/posts/eb5cc35d/abstract.png" width="60%">
+</center>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a><strong>Introduction</strong></h2><p style="text-indent:2em">生态系统服务被定义为人们从生态系统中获得的利益（MA），以及生态系统为人类福祉直接或间接的贡献（TEEB）。</p>
+
+<p style="text-indent:2em">水生生态系统（河流、湖泊、地下水、近岸海域、海域）提供了例如鱼类生产、供水和娱乐这些重要的生态系统服务，关键的一些生态系统服务也与流域内的水文循环有关，例如水质净化、水量保持和气候调节。这些与水相关的生态系统服务大部分可以被人们直接感知并量化，也有一些，特别是调节和维持服务，则不太明显。然而，水资源的可持续利用和管理必须考虑所有的生态系统服务。</p>
+
+<p style="text-indent:2em">在欧洲，已经根据欧盟水框架指令（Water Framework Directive，WFD）制定了流域管理计划(River Basin Management Plans，RBMP)。该计划需要对水管理进行国土规划，并通过生态系统服务的概念来认识水系统的多功能性，并核算人们从自然中获得的利益，从而证明保护和恢复的成本是合理的。然而，由于缺乏统一的生态系统服务定义和量化评估方法，限制了从业者和政策制定者。</p>
+
+<p style="text-indent:2em">认识水生态系统的多重压力、状况和服务之间的关系，有助于通过考虑投资自然保护和恢复带来的好处，来设计措施实现WFD对保持良好水生态系统的希冀。然而，由于缺乏明确的定义和实用的方法来评估与水有关的生态系统服务，可能会阻碍该方法的采用。此外，虽然与土地利用直接相关的生态系统服务制图相当直观，但对于淡水生态系统而言，评估要更为复杂，因为必须考虑水文循环和水陆相互作用。</p>
+
+<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a><strong>Method</strong></h2><p style="text-indent:2em">该文章分析的区域为内陆水域，空间尺度从水体→集水区/河流流域→欧洲。对于水体，主要关注的是支持生态系统服务的特定生态系统功能，及其在不同胁迫下的变化，流域尺度则更为合适观测和量化与水循环相关过程、实施监测和管理计划以减少多重压力。在欧洲尺度上对生态系统服务进行评估和评估，可以解决区域趋势，识别生态系统服务提供或退化的重点区域，测试区域政策的有效性(例如欧盟指令)，并在大尺度上进行情景分析。</p>
+
+
+<p style="text-indent:2em">该方法构建分为四个步骤：（1）定义和范围界定；（2）框架（压力、生态状态与生态系统服务提供之间的关系）；（3）生态系统服务的生物物理评估；（4）生态系统服务的经济价值评估。</p>
+
+<h2 id="Results-approach-for-assessing-and-valuing-water-ecosystem-services"><a href="#Results-approach-for-assessing-and-valuing-water-ecosystem-services" class="headerlink" title="Results: approach for assessing and valuing water ecosystem services"></a><strong>Results: approach for assessing and valuing water ecosystem services</strong></h2><h3 id="步骤1：范围界定——与水有关的生态系统服务"><a href="#步骤1：范围界定——与水有关的生态系统服务" class="headerlink" title="步骤1：范围界定——与水有关的生态系统服务"></a>步骤1：范围界定——与水有关的生态系统服务</h3><p style="text-indent:2em">该文章基于CICES4.3版的生态系统服务分类框架（Common International Classification of Ecosystem，2015），对与水相关的生态系统服务进行了简化分类（如表1所示）。</p>
+
+<center>
+<img data-src="/posts/eb5cc35d/figure1.png" width="60%">
+<p>表1 与水相关的生态系统服务分类</p>
+</center>
+
+<h3 id="步骤2：框架——将压力、生态状况和生态系统服务联系起来进行水资源管理"><a href="#步骤2：框架——将压力、生态状况和生态系统服务联系起来进行水资源管理" class="headerlink" title="步骤2：框架——将压力、生态状况和生态系统服务联系起来进行水资源管理"></a>步骤2：框架——将压力、生态状况和生态系统服务联系起来进行水资源管理</h3><p style="text-indent:2em">总体而言，影响水生生态系统的主要压力可概括为水量和水质的改变，以及物理生境和生物成分的变化（表2），人类活动是多种压力的主要驱动力。</p>
+
+<center>
+<img data-src="/posts/eb5cc35d/figure2.png" width="60%">
+<p>表2 水生态系统的压力源和压力</p>
+</center>
+
+<p style="text-indent:2em">压力会影响生物多样性和水生生态系统的状况，这可能导致生态系统服务及其经济价值的变化。过度开发生态系统服务也可能会变成对生态系统的压力。因此，在评估提供的生态系统服务时，必须考虑系统的复原力，同时引入可持续性的概念（图1）。RBMP便注重量化该系统各组成部分在补救措施和压力情景下的变化。</p>
+
+<center>
+<img data-src="/posts/eb5cc35d/figure3.jpg" width="60%">
+<p>图1 相互关系的示意图</p>
+</center>
+
+<p style="text-indent:2em">为了能对这些联系进行分析，该文章开发了一个与水相关的服务综合评估的概念框架（如图2所示）。</p>
+
+<center>
+<img data-src="/posts/eb5cc35d/figure4.jpg" width="60%">
+<p>图2 用于分析压力、生态系统状况和生态系统服务之间联系的综合评估框架</p>
+</center>
+
+<p style="text-indent:2em">该框架确定了影响水生生态系统的主要压力（根据表1）以及与四个生态系统/水文属性改变的可能联系：（1）水量（包括季节性）；（2）水质；（3）生物质量要素；（4）水文形态和物理结构。对于每个属性，研究选择了一些具有代表性的指标作为示例，并确定了与本研究中建议的生态系统服务的一些可能关系（表1）。</p>
+
+<p style="text-indent:2em">该框架（图2）的目的是帮助用户描述压力与生态系统服务之间的关系，设计评估和情景分析的概念方案，其中箭头是示例。每个用户都可以选择所分析的关系，并根据所研究的特定案例完成和调整框架。这个想法考虑了所选服务和特定压力源之间的联系。图3给出了压力源/压力对不同生态系统服务预期的定性影响。</p>
+
+<center>
+<img data-src="/posts/eb5cc35d/figure5.jpg" width="60%">
+<p>图3 预期的压力源/压力对不同生态系统服务的定性影响</p>
+</center>
+
+<h3 id="步骤3：生物物理评估"><a href="#步骤3：生物物理评估" class="headerlink" title="步骤3：生物物理评估"></a>步骤3：生物物理评估</h3><h4 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h4><p style="text-indent:2em">水的数量和质量，以及与水有关的生态系统服务，会受到气候、地形和地质、土地覆盖和管理以及其他人为变化间复杂相互作用的影响。将与水有关的生态系统服务纳入决策过程需要有能力预测土地利用和气候变化对水资源的影响，这可以通过水文模型提供。</p>
+<p style="text-indent:2em">水文和生物地球化学集水区模型是处理与水有关的生态系统服务的合适工具。它们可以表示流域的动态（复原力），以及受益者与影响之间的时间（滞后时间）和空间距离，并且可用于多个压力源的情景分析。它们还允许描述综合评估框架中提出的压力源、状态和服务之间的物理关系</p>
+
+<h4 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h4><p style="text-indent:2em">为了能正确理解和合理使用生态系统服务指标，以及能更普遍地结构化评估，必须分析生态系统服务的哪些维度需要通过指标来体现。为此，研究提出了一个简化的概念框架，用于构建水生态系统服务指标的分类和分析。</p>
+
+<p style="text-indent:2em">该框架（如图4所示）包括了生态系统提供服务的能力、服务的实际流量和效益。能力是指生态系统提供生态系统服务的潜力，流量是生态系统服务的实际使用情况。能力依赖于生物物理数据，而流量则需要社会经济数据。效益与人类福祉和价值体系有关，服务往往与生态系统的高度利用有关；风险是对自然的不可持续利用。</p>
+
+<p style="text-indent:2em">出于这个原因，本文注重研究服务的可持续流动，并在概念框架中考虑了这一点，其中便包括关于可持续性的指标，即结合能力和流量的指标（例如水资源开发指数）。在许多情况下，缺乏关于能力和流量的信息，或者不能知道或无法解释生态系统的全部能力。在这些情况下，该研究尝试收集有关过程效率的指标（例如，每单位投入污染物的去除率）。</p>
+
+<center>
+<img data-src="/posts/eb5cc35d/figure6.jpg" width="60%">
+<p>图4 对水生态系统服务指标进行分类的概念框架</p>
+</center>
+
+<p style="text-indent:2em">研究还编制了一份水生态系统服务的潜在表征/指标清单，并根据概念框架的类别（能力、流量和效益）对它们进行了分类（表3）。</p>
+
+<center>
+<img data-src="/posts/eb5cc35d/figure7-1.png" width="60%">
+<img data-src="/posts/eb5cc35d/figure7-2.png" width="60%">
+<img data-src="/posts/eb5cc35d/figure7-3.png" width="60%">
+<p>图5 对水生态系统服务指标进行分类的概念框架</p>
+</center>
+
+<p style="text-indent:2em"></p>
+
+<h3 id="步骤4：经济估值"><a href="#步骤4：经济估值" class="headerlink" title="步骤4：经济估值"></a>步骤4：经济估值</h3><p style="text-indent:2em">总体而言，有三类方法可用于估计淡水生态系统服务的经济价值：基于成本的方法、揭示偏好方法和陈述偏好方法。基于成本的方法主要考虑提供服务的成本；揭示偏好法是使用实际数据来描述个体对可销售商品（包括环境属性在内）偏好的方法；陈述偏好法是指基于结构化调查来获取个体对非市场环境商品偏好的方法。在无法获得具体地点的数据或资金限制的情况下，评估生态系统服务价值的另一种有效方法是效益转移方法。</p>
+
+<h4 id="水体-x2F-集水区尺度的经济评价"><a href="#水体-x2F-集水区尺度的经济评价" class="headerlink" title="水体/集水区尺度的经济评价"></a>水体/集水区尺度的经济评价</h4><p style="text-indent:2em">价值评估方法的选择取决于所要评估的生态系统服务和受益人群。表2呈现了基于文献综述的生态系统服务价值评估方法。</p>
+
+<center>
+<img data-src="/posts/eb5cc35d/figure8.png" width="60%">
+<p>表3 淡水生态系统服务、价值类型及应用价值评估方法</p>
+</center>
+
+<p style="text-indent:2em">经济价值评估的主要困难之一是确定受益人口（受益人）的规模。总收益取决于对个人收益和受益者人数的估计。一般来说，受益者应该是在相关地理尺度上聚合的家庭/个人，并且应该包括被生态系统服务影响（除仅对局部重要性的服务）的用户和非用户。此外，对于某些服务（例如娱乐服务），在空间上合计对个人的效益时，通常认为支付意愿（Willingness to Pay，WTP）会随着与提供生态系统服务的水体距离的增加而降低，因为预期生态系统服务提供的机会会随着距离的增加而减少，并假定可能会有更多替代品存在。研究一般采用距离衰减函数，来描述支付意愿随距离提供生态系统服务的水体变远而减小。这个距离决定了地理区域的边界，或所谓的经济管辖区，在这个边界内，个人的WTP值可以汇总到受益者的人口中，以计算拟议的环境变化情景下的总经济价值。</p>
+
+<h4 id="更大-x2F-大陆尺度的经济价值评估"><a href="#更大-x2F-大陆尺度的经济价值评估" class="headerlink" title="更大/大陆尺度的经济价值评估"></a>更大/大陆尺度的经济价值评估</h4><p style="text-indent:2em">在更大/大陆尺度上（如欧洲尺度），提高主要研究价值（价值转移）和考虑生物物理和社会经济特征的空间异质性的方法更为合适。这种方法是利用已有的关于水体生态系统服务价值评估的研究成果进行荟萃分析（meta-analysis），来拟合出一个表示水生态系统特征与其服务价值关系的函数</p>
+
+<p style="text-indent:2em">荟萃分析的第一步通常是通过系统搜索和选择评估生态系统服务的研究。来自主要研究的所有相关数据，包括所应用的方法、生态系统服务价值、生态系统的生物物理特征以及生态系统服务受益者的特征等信息，都收集并整理在一个元数据库中。为了能够在研究之间进行比较，使用不同的度量标准（即WTP、边际价值、资本化价值）报告的经济价值需要被标准化。然而，这是一项困难且有争议的任务。</p>
+
+<p style="text-indent:2em">等价购买力指标通常会应用于初始值，来考虑国家间购买力的差异，并使用适当的紧缩指数来处理观测年份的差异。此外，对不同方法下的值进行归一化处理。例如用单位面积和时间的货币来表示；或访问次数和时间；或家庭/受访者人数和时间。</p>
+
+<p style="text-indent:2em">Meta分析的第二步骤是荟萃价值（meta-values）传递函数的估计。回归方法可以考虑主要研究地点和政策地点之间的生物物理或社会经济差异。目前，有两种流行的面板数据模型可用于估计荟萃回归模型，分别是固定效应模型和随机效应模型。随机效应模型允许真实效应量因研究而异，是较为推荐的方法。通过回归分析估计的生态系统服务价值，随后可以通过放大过程在较大的地理区域转移和聚合。在不同的荟萃回归构建中，需要根据模型的解释力、估计系数的符号和显著性，来选择最合适的传递函数。此外，还需要确定合适的价值转移地理尺度。</p>
+
+<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a><strong>Discussion</strong></h2><p style="text-indent:2em">考虑到目前实施的挑战性和紧迫性，即能否将生态系统服务的概念转化为实践，可操作性构成了本审查和拟议方法发展的主要标准之一。该研究讨论了在评估支持WFD和RBMP的生态系统服务时其认为重要的一些方面，以及所提出的方法如何解决这些问题。</p>
+
+<h3 id="生态系统服务价值评估"><a href="#生态系统服务价值评估" class="headerlink" title="生态系统服务价值评估"></a>生态系统服务价值评估</h3><p style="text-indent:2em">WFD是指在决策中进行经济评价，以支持RBMP倡议确定和选择具有成本效益的措施方案。量化自然为人类提供的利益(生态系统服务)，将有助于为投资水生态系统保护和恢复提供依据。此外，通过考虑不同措施和基于自然的解决方案对不同生态系统服务的共同效益，可以综合所有相关的生态系统服务来改善PoM的发展。生态系统服务的效益也可以纳入成本效益分析，在供水系统中贯彻成本回收原则。</p>
+
+<p style="text-indent:2em">然而，生态系统服务的价值评估也涉及一些重要的风险，即为供给、调节和文化服务创造经济市场。为此，该研究反思了"估值"的概念。任何涉及生态系统服务权衡的决策都隐含着价值评估。人与自然的关系存在不同的价值，例如内在价值、根本价值、幸福价值和工具价值。生态系统服务概念所描述的价值取决于该概念如何操作和实施（采用的途径和方法）。不同的利益相关者有不同的价值体系和视角。因此，在价值评估过程中涉及所有利益相关者，需要考虑价值的多元性，忽略其中的某些价值则会将拥护这些价值的人排除在外。</p>
+
+<p style="text-indent:2em">价值的概念不应局限于单纯的货币价值，而应包含更大范围的价值。如果将生态系统服务的价值限制为经济价值，就有可能错误地核算政策决策的所有的价值维度和环境组成部分（权衡）。“价值多元主义”是指存在多种价值的想法，包括经济（货币）价值，社会文化价值和生态价值，综合估值应该支持价值多元化。估值技术会随要得出的价值类型和估值工作的范围、地理尺度、空间分辨率以及所需的可靠性和准确性而异。估值的目的则可以从提高认识到会计、优先权设定、工具设计和诉讼。</p>
+
+<p style="text-indent:2em">在本文提出的方法中，该研究认为从货币角度上解释经济价值是重要的，例如为提高对一段时间内相对变化的认识，这就排除了将所有生态系统服务视为可替代的目的。本文主要注重的是由于多重压力源变化或措施实施的影响而导致的价值变化。</p>
+
+<h3 id="加强人与自然的联系"><a href="#加强人与自然的联系" class="headerlink" title="加强人与自然的联系"></a>加强人与自然的联系</h3><p style="text-indent:2em">RBMPs基于水资源综合管理（Integrated Water Resource Management，IWRM）的原则，即"促进水、土地和相关资源的协调发展和管理，以公平的方式最大化经济和社会福利，同时不损害重要生态系统的可持续性"。在生态系统服务方法提出之前，IWRM已经强调将环境和人类福祉联系起来的必要性，并提出在水资源管理中整合来自不同部门和利益相关者的多学科知识。生态系统服务方法与IWRM具有显著的相似性。Cook和Spray ( 2012 )认为这两个概念"几乎完全相同"。两者的目标都是自然资源的管理，优化经济和社会福利，同时确保生态可持续性，整合利益相关者的知识和多学科的观点。生态系统服务和IWRM的共同目标是在支持可持续性的同时，协商不同人类和生态系统需求之间的权衡，并需要利益相关者的参与，以明确整个价值范围(不仅仅是经济价值)。</p>
+
+<p style="text-indent:2em">生态系统服务方法为分析不同服务之间的权衡以及与受益者之间的联系提供了一个框架。从对IWRM的批评中吸取教训，将有助于改进生态系统服务方法的采用。这些批评与缺乏一致的定义、难以发展整体性方法、概念存在对立解释的风险以及未能将原则纳入治理有关。"实施差距"是生态系统服务方法面临的一个重要挑战，本研究旨在为这一努力做出贡献。</p>
+
+<p style="text-indent:2em">为了应对当前的可持续性挑战，必须认识到人类福祉对自然资本的依赖性。生态系统服务方法等综合框架允许在系统分析中纳入自然成分，该方法所倡导的人-生态系统的概念在将生物物理过程和人类利益联系起来方面具有强大的能力，并允许在流域决策过程中重视和整合生态系统服务。然而，评估与水质相关的生态系统服务的经济模型往往与描述基础自然过程的生物物理模型缺乏整合。</p>
+
+<p style="text-indent:2em">在这项研究中，考虑了生物物理评估和经济价值评估的两个维度，并建议合并在一起进行。这是生态系统服务分析中至关重要但又难以回避的步骤，也是该领域研究的主要挑战之一。整合还取决于评估所使用的方法。在淡水系统中，许多生物物理结果(来自模型或测量)可以作为经济价值评估的输入，例如通过鱼苗的改善，以估计海草对商业鱼类的经济增长；氮滞留效率用于估算水质净化的替代成本；通过预测的鱼类生物量趋势估计未来渔业部门的就业；与财产价值损失相联系的侵蚀速率或退化程度；或与洪水造成的经济损害相联系的气候记录和预测。</p>
+
+
+<h2 id="Conclusions"><a href="#Conclusions" class="headerlink" title="Conclusions"></a><strong>Conclusions</strong></h2><p style="text-indent:2em">本文提出的水生态系统服务价值评估方法为丰富水管理提供了一定的知识基础，特别是对欧盟WFD的实施提出了更全面的观点，将多重压力、生态状况和生态系统服务的提供联系起来。在这一视角下，可以完善对成本效益和修复措施的分析，包括所有来自水生态系统服务的隐性收益和受益者。</p>
+
+<p style="text-indent:2em">第一部分的分析首先应该识别注重的生态系统服务，并框定多个驱动因素和压力对水体生态状况的主要影响。然后，该方法建议对水生态系统服务的自然容量、实际流量和社会效益进行生物物理量化。该研究建议在这部分评估中使用基于水文模型或数据的选定代理/指标。这种方法的一个重要和新颖之处是还评估了一些可持续性(或效率)指标，这些指标估计了具有一定可持续能力的服务流，这样可以避免对某些服务的过度开发。该方法还包括对水生态系统的经济价值评估，提供了每种服务的技术清单和应用的空间尺度，估值方法种类繁多，需要慎重选择。对水生态系统服务进行价值评估，可以突出对社会的隐性利益，并提高用户和利益相关者的认识。即使货币价值可能是水管理最有吸引力的点，该研究也主张和描述使用多种价值的优势。总的来说，本文提出的方法可用于评估欧盟水政策实施过程中水生态系统保护和恢复的效益。</p>
+
+<p style="text-indent:2em">采用生态系统服务方法，来描述和整合与新计划和投资有关的所有影响（经济、环境和社会）是有可能的。同时评估生物物理和经济价值，可以提高人们对自然与人类相互依赖的认识，促进水资源的可持续管理。生物物理和经济方法与数据的集成仍然是该方法的主要挑战和关键方面之一。</p>
+
+<p><a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/pii/S1462901116300892">Assessing water ecosystem services for water resource management (原文链接)</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>庶几
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://owome.space/posts/eb5cc35d.html" title="文献分享：Assessing water ecosystem services for water resoure management">http://owome.space/posts/eb5cc35d.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%96%87%E7%8C%AE/" rel="tag"># 文献</a>
+              <a href="/tags/%E8%8B%B1%E6%96%87/" rel="tag"># 英文</a>
+              <a href="/tags/%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1/" rel="tag"># 生态系统服务</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/cb37d761.html" rel="prev" title="文献分享：Forest hydrology modeling tools for watershed management:A review">
+      <i class="fa fa-chevron-left"></i> 文献分享：Forest hydrology modeling tools for watershed management:A review
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Assessing-water-ecosystem-services-for-water-resource-management%EF%BC%88%E9%9D%A2%E5%90%91%E6%B0%B4%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%9A%84%E6%B0%B4%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">Assessing water ecosystem services for water resource management（面向水资源管理的水生态系统服务评估）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">2.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method"><span class="nav-number">2.2.</span> <span class="nav-text">Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results-approach-for-assessing-and-valuing-water-ecosystem-services"><span class="nav-number">2.3.</span> <span class="nav-text">Results: approach for assessing and valuing water ecosystem services</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A41%EF%BC%9A%E8%8C%83%E5%9B%B4%E7%95%8C%E5%AE%9A%E2%80%94%E2%80%94%E4%B8%8E%E6%B0%B4%E6%9C%89%E5%85%B3%E7%9A%84%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="nav-number">2.3.1.</span> <span class="nav-text">步骤1：范围界定——与水有关的生态系统服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A42%EF%BC%9A%E6%A1%86%E6%9E%B6%E2%80%94%E2%80%94%E5%B0%86%E5%8E%8B%E5%8A%9B%E3%80%81%E7%94%9F%E6%80%81%E7%8A%B6%E5%86%B5%E5%92%8C%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E8%81%94%E7%B3%BB%E8%B5%B7%E6%9D%A5%E8%BF%9B%E8%A1%8C%E6%B0%B4%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86"><span class="nav-number">2.3.2.</span> <span class="nav-text">步骤2：框架——将压力、生态状况和生态系统服务联系起来进行水资源管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A43%EF%BC%9A%E7%94%9F%E7%89%A9%E7%89%A9%E7%90%86%E8%AF%84%E4%BC%B0"><span class="nav-number">2.3.3.</span> <span class="nav-text">步骤3：生物物理评估</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E6%A0%87"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">指标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A44%EF%BC%9A%E7%BB%8F%E6%B5%8E%E4%BC%B0%E5%80%BC"><span class="nav-number">2.3.4.</span> <span class="nav-text">步骤4：经济估值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B0%B4%E4%BD%93-x2F-%E9%9B%86%E6%B0%B4%E5%8C%BA%E5%B0%BA%E5%BA%A6%E7%9A%84%E7%BB%8F%E6%B5%8E%E8%AF%84%E4%BB%B7"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">水体&#x2F;集水区尺度的经济评价</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E5%A4%A7-x2F-%E5%A4%A7%E9%99%86%E5%B0%BA%E5%BA%A6%E7%9A%84%E7%BB%8F%E6%B5%8E%E4%BB%B7%E5%80%BC%E8%AF%84%E4%BC%B0"><span class="nav-number">2.3.4.2.</span> <span class="nav-text">更大&#x2F;大陆尺度的经济价值评估</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Discussion"><span class="nav-number">2.4.</span> <span class="nav-text">Discussion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E4%BB%B7%E5%80%BC%E8%AF%84%E4%BC%B0"><span class="nav-number">2.4.1.</span> <span class="nav-text">生态系统服务价值评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%BC%BA%E4%BA%BA%E4%B8%8E%E8%87%AA%E7%84%B6%E7%9A%84%E8%81%94%E7%B3%BB"><span class="nav-number">2.4.2.</span> <span class="nav-text">加强人与自然的联系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusions"><span class="nav-number">2.5.</span> <span class="nav-text">Conclusions</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">庶几</p>
+  <div class="site-description" itemprop="description">不定期的分享一些有意思的东西，要多来逛逛哦(´▽`ʃ♡ƪ)</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/2461500433" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;2461500433" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/10854350" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;10854350" rel="noopener" target="_blank"><i class="fa fa-fw fa-custom mybilibili"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">庶几</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
